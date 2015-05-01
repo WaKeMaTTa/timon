@@ -1,31 +1,31 @@
-.registration
-  .inner-content
-    .card
-      .card-title
-        %h2.title Registration
+.card.authentication
+  .card-header
+    %h2.title Registration
 
-      .form-container
-        = form_for(resource, as: resource_name, url: registration_path(resource_name), html: {role: 'form'}) do |f|
-          = devise_error_messages!
+  .card-content
+    .form-container
+      = form_for(resource, as: resource_name, url: registration_path(resource_name), html: {role: 'form'}) do |f|
+        = devise_error_messages!
 
-          .form-group
-            = f.label :email
-            = f.email_field :email, autofocus: true, class: 'form-control'
+        .form-group
+          = f.label :email
+          = f.email_field :email, autofocus: true, class: 'form-control'
 
-          .form-group
-            = f.label :password
-            = f.password_field :password, class: 'form-control'
+        .form-group
+          = f.label :password
+          = f.password_field :password, class: 'form-control'
 
-          .form-group
-            = f.label :password_confirmation
-            = f.password_field :password_confirmation, class: 'form-control'
+        .form-group
+          = f.label :password_confirmation
+          = f.password_field :password_confirmation, class: 'form-control'
 
-          = f.submit 'Create Account', class: 'btn btn-block btn-success submit'
+        = f.submit 'Create Account', class: 'btn btn-block btn-success submit'
 
-          .terms
-            By clicking Create Account, you are agreeing to the
-            = link_to 'Terms of Service', root_path, class: 'link'
+        .terms
+          By clicking Create Account, you are agreeing to the
+          = link_to 'Terms of Service', root_path, class: 'link'
 
-      %p.login
-        Already have an account?
-        = link_to 'Login', new_user_session_path, class: 'link'
+  .card-footer
+    %p.login
+      Already have an account?
+      = link_to 'Login', new_user_session_path, class: 'link'

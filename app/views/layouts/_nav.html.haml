@@ -98,7 +98,7 @@
         %li.dropdown
           %a.dropdown-toggle{'data-toggle' => 'dropdown', href: '#'}
             = fa_icon 'user', class: 'fa-fw'
-            User Name
+            = current_user.name
             %b.caret
           %ul.dropdown-menu
             %li

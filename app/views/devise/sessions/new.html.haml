@@ -1,32 +1,32 @@
-.login
-  .inner-content
-    .card
-      .card-title
-        %h2.title Log in
+.card.authentication
+  .card-header
+    %h2.title Log in
 
-      .form-container
-        = form_for(resource, as: resource_name, url: session_path(resource_name), html: {role: 'form'}) do |f|
-          = devise_error_messages!
+  .card-content
+    .form-container
+      = form_for(resource, as: resource_name, url: session_path(resource_name), html: {role: 'form'}) do |f|
+        = devise_error_messages!
 
-          .form-group
-            = f.label :email
-            = f.email_field :email, autofocus: true, class: 'form-control'
+        .form-group
+          = f.label :email
+          = f.email_field :email, autofocus: true, class: 'form-control'
 
-          .form-group
-            - if devise_mapping.recoverable?
-              = link_to 'Forgot password?', new_password_path(resource_name), class: 'action'
-            = f.label :password
-            = f.password_field :password, class: 'form-control'
+        .form-group
+          - if devise_mapping.recoverable?
+            = link_to 'Forgot password?', new_password_path(resource_name), class: 'action'
+          = f.label :password
+          = f.password_field :password, class: 'form-control'
 
-          .form-group
-            .remember-me
-              - if devise_mapping.rememberable?
-                = f.label :remember_me
-                = f.check_box :remember_me, class: 'checkbox'
+        .form-group
+          .remember-me
+            - if devise_mapping.rememberable?
+              = f.label :remember_me
+              = f.check_box :remember_me, class: 'checkbox'
 
-          = f.submit 'Log in', class: 'btn btn-block btn-success submit'
+        = f.submit 'Log in', class: 'btn btn-block btn-success submit'
 
-      - if devise_mapping.registerable?
-        %p.registration
-          Do you haven't an account?
-          = link_to 'Registration', new_user_registration_path, class: 'link'
+  - if devise_mapping.registerable?
+    .card-footer
+      %p.registration
+        Do you haven't an account?
+        = link_to 'Registration', new_user_registration_path, class: 'link'
