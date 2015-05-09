@@ -1,9 +1,10 @@
-= simple_form_for(@post) do |f|
-  = f.error_notification
-
+= simple_form_for([@category, @post]) do |f|
   .form-inputs
     = f.input :title
     = f.input :description
+    = f.association :category
+    = f.input :user_id, as: :hidden, value: current_user.id
 
   .form-actions
-    = f.button :submit
+    = f.button :submit, class: 'btn btn-primary'
+    = link_to 'Back', category_path(@category), class: 'btn btn-back'

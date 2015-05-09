@@ -1,0 +1,9 @@
+- if @category.blog?
+  = render partial: 'posts/blog', locals: { category: @category, posts: @posts }
+
+- elsif @category.community?
+  = render partial: 'posts/community', locals: { category: @category, posts: @posts }
+
+.footer-buttons-wrapper
+  = link_to new_category_post_path(@category), class: 'btn-add-post' do
+    = fa_icon 'plus-circle', class: 'fa-3x text-primary'

@@ -1,0 +1,12 @@
+.row
+  - @posts.each do |post|
+    .col-sm-6.col-md-6.col-lg-4
+      .card
+        .card-header
+          .title= post.title
+        .card-content
+          %p= post.description
+        .card-footer
+          %p
+            = link_to 'Edit', edit_category_post_path(@category, post), class: 'btn btn-sm btn-warning'
+            = link_to 'Destroy', category_post_path(@category, post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger'

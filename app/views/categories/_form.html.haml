@@ -1,0 +1,8 @@
+= simple_form_for(@category) do |f|
+  .form-inputs
+    = f.input :title
+    = f.input :kind, as: :select, collection: Category::KINDS, include_blank: false
+
+  .form-actions
+    = f.button :submit, class: 'btn btn-primary'
+    = link_to 'Back', categories_path, class: 'btn btn-back'

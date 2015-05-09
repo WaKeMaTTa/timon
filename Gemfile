@@ -7,31 +7,30 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
-group :development, :test do
-  gem 'byebug'
-  gem 'web-console', '~> 2.0'
-  gem 'spring'
-  gem 'dotenv-rails'
-end
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 gem 'devise'
 gem 'haml-rails'
 gem 'pg'
 gem 'simple_form'
-gem 'therubyracer', :platform=>:ruby
-group :development do
-  gem 'better_errors'
-  gem 'html2haml'
-  gem 'hub', :require=>nil
-  gem 'quiet_assets'
-  gem 'rails_layout'
-  gem 'spring-commands-rspec'
-end
+gem 'active_record-acts_as'
+gem 'therubyracer', platform: :ruby
 group :development, :test do
+  gem 'byebug'
+  gem 'web-console', '~> 2.0'
+  gem 'spring'
+  gem 'dotenv-rails'
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'rspec-rails'
+end
+group :development do
+  gem 'better_errors'
+  gem 'html2haml'
+  gem 'hub', require: nil
+  gem 'quiet_assets'
+  gem 'rails_layout'
+  gem 'spring-commands-rspec'
 end
 group :production do
   gem 'rails_12factor'

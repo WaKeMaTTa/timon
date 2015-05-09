@@ -1,0 +1,13 @@
+.row
+  - @posts.each do |post|
+    .col-md-8.col-md-offset-2
+      .card
+        .card-header
+          %h4= post.title
+        .card-content
+          %p= truncate post.description, length: 1200
+        .card-footer
+          %p
+            = link_to 'Read more', category_post_path(@category, post), class: 'btn btn-sm btn-primary'
+            = link_to 'Edit', edit_category_post_path(@category, post), class: 'btn btn-sm btn-warning'
+            = link_to 'Destroy', category_post_path(@category, post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger'
